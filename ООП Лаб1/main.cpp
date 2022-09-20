@@ -4,15 +4,15 @@ using namespace std;
 
 double ZavdClass::Fn_b()
 {
-	double b1 = pow(cos(atan(pow(x, 2))), 2);
-	double b2 = y / (z + 1) + x / z * exp(3 * x + y);
+	double b1 = pow(cos(atan((pow(x, 2)-y)/(z+1))), 2);
+	double b2 = x / z * exp(3 * x + y);
 	return b1 + b2;
 }
 // Обчислення функції a[x,y,z,b]
 double ZavdClass::Fn_a()
 {
-	double a1 = 1 + (sqrt(sin(pow(abs(x + y), 0.4))));
-	double a2 = 2 + pow(Fn_b(), 2) + pow(sin((y - z)), 2);
+	double a1 = 1 + (sqrt(pow(sin(pow(abs(x + y), 0.4)),2)));
+	double a2 = 2 + pow(Fn_b(), 2) + pow(sin(pow(y - z,3)), 2);
 	double a3 = tan(3 * x / z);
 	return a1 / a2 + a3;
 }
